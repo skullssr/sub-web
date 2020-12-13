@@ -275,7 +275,8 @@ export default {
             "https://subcon.dlj.tf/sub?",
           "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
           "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?",
-          "pzcn.live(PZCN站提供-防屏蔽-实验性)": "https://sub.pzcn.live/sub?",
+          "id9.cc(品云专属后端)": "https://sub.id9.cc/sub?",
+          "sub.maoxiongnet.com(猫熊提供)": "https://sub.maoxiongnet.com/sub?",
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
@@ -283,7 +284,8 @@ export default {
           { value: "https://subcon.dlj.tf/sub?" },
           { value: "https://api.dler.io/sub?" },
           { value: "https://api.wcc.best/sub?" },
-          { value: "https://sub.pzcn.live/sub?" },
+          { value: "https://sub.id9.cc/sub?" },
+          { value: "https://sub.maoxiongnet.com/sub?" },
         ],
         remoteConfig: [
           {
