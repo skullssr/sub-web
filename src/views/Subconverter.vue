@@ -291,31 +291,31 @@ export default {
             options: [
               {
                 label: "常规规则",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/normal.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/skull/normal.ini"
               },
               {
                 label: "分区域故障转移",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_Fallback.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/skull/Area_Fallback.ini"
               },
               {
                 label: "分区域自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_Urltest.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/skull/Area_Urltest.ini"
               },
               {
                 label: "分区域无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/skull/Area_NoAuto.ini"
               },
               {
                 label: "媒体与分区域自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_Media.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/skull/Area_Media.ini"
               },
               {
                 label: "媒体与分区域无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_Media_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/skull/Area_Media_NoAuto.ini"
               },
               {
                 label: "无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Media_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/skull/Media_NoAuto.ini"
               }
             ]
           },
@@ -512,27 +512,27 @@ export default {
             options: [
               {
                 label: "常规规则",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Merlin_Clash/ZHANG.ini"
               },
               {
                 label: "分区域故障转移",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_Fallback.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Merlin_Clash/ZHANG_Area_Fallback.ini"
               },
               {
                 label: "分区域自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_Urltest.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Merlin_Clash/ZHANG_Area_Urltest.ini"
               },
               {
                 label: "分区域无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Merlin_Clash/ZHANG_Area_NoAuto.ini"
               },
               {
                 label: "媒体与分区域自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_Media.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Merlin_Clash/ZHANG_Area_Media.ini"
               },
               {
                 label: "媒体与分区域无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_Media_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Merlin_Clash/ZHANG_Area_Media_NoAuto.ini"
               }
             ]
           },
@@ -646,7 +646,7 @@ export default {
     this.form.clientType = "clash&new_name=true";
     this.form.customBackend = "https://sub.con8.tk/sub?";
     // this.form.remoteConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
-    this.form.remoteConfig = "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/normal.ini";
+    this.form.remoteConfig = "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/skull/normal.ini";
     this.notify();
     this.getBackendVersion();
   },
