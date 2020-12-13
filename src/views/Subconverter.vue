@@ -11,7 +11,7 @@
             <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div>
           </div>
           <el-container>
-            <el-form :model="form" label-width="80px" label-position="left" style="width: 100%">
+            <el-form :model="form" label-width="100px" label-position="left" style="width: 100%">
               <el-form-item label="模式设置:">
                 <el-radio v-model="advanced" label="1">基础模式</el-radio>
                 <el-radio v-model="advanced" label="2">进阶模式</el-radio>
@@ -87,39 +87,41 @@
                     <el-col>
                       <el-checkbox v-model="form.nodeList" label="输出为 Node List" border></el-checkbox>
                     </el-col>
-                    <el-popover placement="bottom" v-model="form.extraset">
-                      <el-row>
-                        <el-checkbox v-model="form.emoji" label="Emoji"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.new_name" label="Clash New Field"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.appendType" label="节点类型"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.sort" label="排序节点"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.fdn" label="过滤非法节点"></el-checkbox>
-                      </el-row>
-                      <el-button slot="reference">更多选项</el-button>
-                    </el-popover>
-                    <el-popover placement="bottom" style="margin-left: 10px">
-                      <el-row>
-                        <el-checkbox v-model="form.tpl.surge.doh" label="Surge.DoH"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox v-model="form.insert" label="网易云"></el-checkbox>
-                      </el-row>
-                      <el-button slot="reference">定制功能</el-button>
-                    </el-popover>
+                    <el-col>
+                      <el-popover placement="bottom" v-model="form.extraset">
+                        <el-row>
+                          <el-checkbox v-model="form.emoji" label="Emoji"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.new_name" label="Clash New Field"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.appendType" label="节点类型"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.sort" label="排序节点"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.fdn" label="过滤非法节点"></el-checkbox>
+                        </el-row>
+                        <el-button slot="reference">更多选项</el-button>
+                      </el-popover>
+                      <el-popover placement="bottom" style="margin-left: 10px">
+                        <el-row>
+                          <el-checkbox v-model="form.tpl.surge.doh" label="Surge.DoH"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.tpl.clash.doh" label="Clash.DoH"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.insert" label="网易云"></el-checkbox>
+                        </el-row>
+                        <el-button slot="reference">定制功能</el-button>
+                      </el-popover>
+                    </el-col>
                   </el-row>
                 </el-form-item>
               </div>
@@ -242,7 +244,7 @@ export default {
   data() {
     var data = {
       backendVersion: '',
-      advanced: "1",
+      advanced: "2",
 
       // 是否为 PC 端
       isPC: true,
@@ -268,26 +270,52 @@ export default {
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
-          "sub-beta.now.sh (自动编译最新版本后端-测试）": "https://sub-beta.now.sh/sub?",
+          "con8.tk (本站提供）": "https://sub.con8.tk/sub?",
           "subcon.dlj.tf(subconverter作者提供-稳定)":
             "https://subcon.dlj.tf/sub?",
           "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
           "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?",
+          "pzcn.live(PZCN站提供-防屏蔽-实验性)": "https://sub.pzcn.live/sub?",
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
-          { value: "https://sub-beta.now.sh/sub?" },
+          { value: "https://sub.con8.tk/sub?" },
           { value: "https://subcon.dlj.tf/sub?" },
           { value: "https://api.dler.io/sub?" },
           { value: "https://api.wcc.best/sub?" },
+          { value: "https://sub.pzcn.live/sub?" },
         ],
         remoteConfig: [
           {
-            label: "默认",
+            label: "本站专用",
             options: [
               {
-                label: "不选，由接口提供方提供",
-                value: ""
+                label: "常规规则",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/normal.ini"
+              },
+              {
+                label: "分区域故障转移",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_Fallback.ini"
+              },
+              {
+                label: "分区域自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_Urltest.ini"
+              },
+              {
+                label: "分区域无自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_NoAuto.ini"
+              },
+              {
+                label: "媒体与分区域自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_Media.ini"
+              },
+              {
+                label: "媒体与分区域无自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Area_Media_NoAuto.ini"
+              },
+              {
+                label: "无自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/Media_NoAuto.ini"
               }
             ]
           },
@@ -407,21 +435,6 @@ export default {
             ]
           },
           {
-            label: "universal",
-            options: [
-              {
-                label: "No-Urltest",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/no-urltest.ini"
-              },
-              {
-                label: "Urltest",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/urltest.ini"
-              }
-            ]
-          },
-          {
             label: "customized",
             options: [
               {
@@ -495,8 +508,47 @@ export default {
             ]
           },
           {
+            label: "Merlin Clash",
+            options: [
+              {
+                label: "常规规则",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG.ini"
+              },
+              {
+                label: "分区域故障转移",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_Fallback.ini"
+              },
+              {
+                label: "分区域自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_Urltest.ini"
+              },
+              {
+                label: "分区域无自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_NoAuto.ini"
+              },
+              {
+                label: "媒体与分区域自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_Media.ini"
+              },
+              {
+                label: "媒体与分区域无自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/Merlin_Clash/ZHANG_Area_Media_NoAuto.ini"
+              }
+            ]
+          },
+          {
             label: "Special",
             options: [
+              {
+                label: "No-Urltest",
+                value:
+                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/no-urltest.ini"
+              },
+              {
+                label: "Urltest",
+                value:
+                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/urltest.ini"
+              },
               {
                 label: "NeteaseUnblock(仅规则，No-Urltest)",
                 value:
@@ -506,6 +558,10 @@ export default {
                 label: "Basic(仅GEOIP CN + Final)",
                 value:
                   "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/special/basic.ini"
+              },
+              {
+                label: "不选，由接口提供方提供",
+                value: ""
               }
             ]
           }
@@ -579,7 +635,7 @@ export default {
   created() {
     // document.title = "Subscription Converter";
     document.title = "在线订阅转换";
-     this.isPC = this.$getOS().isPc;
+    this.isPC = this.$getOS().isPc;
 
     // 获取 url cache
     if (process.env.VUE_APP_USE_STORAGE === 'true') {
@@ -588,8 +644,10 @@ export default {
   },
   mounted() {
     this.form.clientType = "clash&new_name=true";
-    this.form.customBackend = "https://sub-beta.now.sh/sub?";
-    this.form.remoteConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
+    this.form.customBackend = "https://sub.con8.tk/sub?";
+    // this.form.remoteConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
+    this.form.remoteConfig = "https://raw.githubusercontent.com/skullssr/ACL4SSR/Clash/config/skull/normal.ini";
+    this.notify();
     this.getBackendVersion();
   },
   methods: {
@@ -759,6 +817,18 @@ export default {
         .finally(() => {
           this.loading = false;
         });
+    },
+    notify: function () {
+      var e = this.$createElement;
+      this.$notify({
+          title: "隐私提示",
+          type: "warning",
+          message: e("i", {
+                  style: "color: teal"
+              },
+              "各种订阅链接（短链接服务除外）生成纯前端实现，无隐私问题。默认提供后端转换服务，隐私担忧者请自行搭建后端服务。"
+          )
+      })
     },
     confirmUploadConfig() {
       if (this.uploadConfig === "") {
