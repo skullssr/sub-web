@@ -715,7 +715,7 @@ export default {
           callback: action => {
             this.$message({
               type: 'error',
-              message: `action: ╮(╯▽╰)╭ 真是没办法呢`
+              message: `action: ${ action }`
             });
           }
         });
