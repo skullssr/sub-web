@@ -316,6 +316,10 @@ export default {
                 value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Area_Media_NoAuto.ini"
               },
               {
+                label: "媒体与分区域去广告",
+                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Area_Media_AdblockPlus.ini"
+              },
+              {
                 label: "无自动测速",
                 value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Media_NoAuto.ini"
               }
