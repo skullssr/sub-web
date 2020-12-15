@@ -556,6 +556,21 @@ export default {
                   "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/urltest.ini"
               },
               {
+                label: "ConnersHua 神机规则 Inbound 回国专用",
+                value:
+                  "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/connershua_backtocn.ini"
+              },
+              {
+                label: "lhie1 洞主规则（使用 Clash 分组规则）",
+                value:
+                  "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/lhie1_clash.ini"
+              },
+              {
+                label: "lhie1 洞主规则完整版",
+                value:
+                  "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/lhie1_dler.ini"
+              },
+              {
                 label: "NeteaseUnblock(仅规则，No-Urltest)",
                 value:
                   "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/special/netease.ini"
