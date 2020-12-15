@@ -546,14 +546,9 @@ export default {
             label: "Special",
             options: [
               {
-                label: "No-Urltest",
+                label: "ConnersHua 神机规则 Outbound",
                 value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/no-urltest.ini"
-              },
-              {
-                label: "Urltest",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/urltest.ini"
+                  "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/connershua_new.ini"
               },
               {
                 label: "ConnersHua 神机规则 Inbound 回国专用",
@@ -579,10 +574,6 @@ export default {
                 label: "Basic(仅GEOIP CN + Final)",
                 value:
                   "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/special/basic.ini"
-              },
-              {
-                label: "不选，由接口提供方提供",
-                value: ""
               }
             ]
           }
