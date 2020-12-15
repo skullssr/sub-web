@@ -270,7 +270,7 @@ export default {
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
-          "sub.con8.tk (本站提供）": "https://sub.con8.tk/sub?",
+          "subcon.tk (本站提供）": "https://subcon.tk/sub?",
           "subcon.dlj.tf(subconverter作者提供-稳定)":
             "https://subcon.dlj.tf/sub?",
           "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
@@ -280,7 +280,7 @@ export default {
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
-          { value: "https://sub.con8.tk/sub?" },
+          { value: "https://subcon.tk/sub?" },
           { value: "https://subcon.dlj.tf/sub?" },
           { value: "https://api.dler.io/sub?" },
           { value: "https://api.wcc.best/sub?" },
@@ -656,7 +656,7 @@ export default {
   },
   mounted() {
     this.form.clientType = "clash&new_name=true";
-    this.form.customBackend = "https://sub.con8.tk/sub?";
+    this.form.customBackend = "https://subcon.tk/sub?";
     // this.form.remoteConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
     this.form.remoteConfig = "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/normal.ini";
     this.notify();
@@ -721,7 +721,7 @@ export default {
       sourceSub = sourceSub.replace(/(\n|\r|\n\r)/g, "|");
 
       // 薯条屏蔽
-      if (sourceSub.indexOf("losadhwse") !== -1 && (backend.indexOf("subconverter-web.now.sh") !== -1 || backend.indexOf("sub.con8.tk") !== -1 || backend.indexOf("subcon.dlj.tf") !== -1 || backend.indexOf("api.dler.io") !== -1 || backend.indexOf("api.wcc.best") !== -1)) {
+      if (sourceSub.indexOf("losadhwse") !== -1 && (backend.indexOf("subconverter-web.now.sh") !== -1 || backend.indexOf("subcon.tk") !== -1 || backend.indexOf("subcon.dlj.tf") !== -1 || backend.indexOf("api.dler.io") !== -1 || backend.indexOf("api.wcc.best") !== -1)) {
         this.$alert('此机场订阅已将该后端屏蔽，请自建后端转换。', '转换错误提示', {
           confirmButtonText: '确定',
           callback: action => {
