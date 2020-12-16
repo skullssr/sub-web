@@ -293,35 +293,35 @@ export default {
             options: [
               {
                 label: "常规规则",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/normal.ini"
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/normal.ini"
               },
               {
                 label: "分区域故障转移",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Area_Fallback.ini"
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Fallback.ini"
               },
               {
                 label: "分区域自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Area_Urltest.ini"
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Urltest.ini"
               },
               {
                 label: "分区域无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Area_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_NoAuto.ini"
               },
               {
                 label: "媒体与分区域自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Area_Media.ini"
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Media.ini"
               },
               {
                 label: "媒体与分区域无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Area_Media_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Media_NoAuto.ini"
               },
               {
                 label: "媒体与分区域去广告",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Area_Media_AdblockPlus.ini"
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Media_AdblockPlus.ini"
               },
               {
                 label: "无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/Media_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Media_NoAuto.ini"
               }
             ]
           },
@@ -518,27 +518,27 @@ export default {
             options: [
               {
                 label: "常规规则",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Merlin_Clash/config/ZHANG.ini"
+                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG.ini"
               },
               {
                 label: "分区域故障转移",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Merlin_Clash/config/ZHANG_Area_Fallback.ini"
+                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Fallback.ini"
               },
               {
                 label: "分区域自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Merlin_Clash/config/ZHANG_Area_Urltest.ini"
+                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Urltest.ini"
               },
               {
                 label: "分区域无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Merlin_Clash/config/ZHANG_Area_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_NoAuto.ini"
               },
               {
                 label: "媒体与分区域自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Merlin_Clash/config/ZHANG_Area_Media.ini"
+                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Media.ini"
               },
               {
                 label: "媒体与分区域无自动测速",
-                value: "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Merlin_Clash/config/ZHANG_Area_Media_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Media_NoAuto.ini"
               }
             ]
           },
@@ -658,7 +658,7 @@ export default {
     this.form.clientType = "clash&new_name=true";
     this.form.customBackend = "https://subcon.tk/sub?";
     // this.form.remoteConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
-    this.form.remoteConfig = "https://raw.githubusercontent.com/skullssr/ACL4SSR/main/Clash/config/normal.ini";
+    this.form.remoteConfig = "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/normal.ini";
     this.notify();
     this.getBackendVersion();
   },
