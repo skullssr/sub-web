@@ -254,8 +254,6 @@ export default {
           "Clash新参数": "clash&new_name=true",
           "ClashR新参数": "clashr&new_name=true",
           Clash: "clash",
-          ClashR: "clashr",
-          Surge2: "surge&ver=2",
           Surge3: "surge&ver=3",
           Surge4: "surge&ver=4",
           Quantumult: "quan",
@@ -267,6 +265,8 @@ export default {
           ss: "ss",
           ssr: "ssr",
           ssd: "ssd",
+          ClashR: "clashr",
+          Surge2: "surge&ver=2",
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
