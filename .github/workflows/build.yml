@@ -36,6 +36,5 @@ jobs:
       uses: zzzze/webhook-trigger@master
       with:
         data: '{"ref":"master"}'
-        Content-Type: 'application/json'
         webhook_url: 'https://api.github.com/repos/skullssr/now-subconverter/actions/workflows/sub-web.yml/dispatches'
-        options: '-H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${{ secrets.REPO_TOKEN }}"'
+        options: '-H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${{ secrets.REPO_TOKEN }}" -H "Content-Type: application/json"'
