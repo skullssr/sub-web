@@ -243,9 +243,8 @@ const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config/upload'
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const domains = document.domain
-const hosts = domains ? (domains + '/sub?') : "https://subcon.tk/sub?"
+const hosts = domains ? ('https://' + domains + '/sub?') : "https://subcon.tk/sub?"
 const hostsname = domains ? (domains + ' (本站提供）') : 'subcon.tk (本站提供）'
-      window.console.log(domains.replace(/\(.*/, ""))
 
 export default {
   data() {
@@ -741,8 +740,8 @@ export default {
         return false;
       }
 
-      if (backend.indexOf(domains.replace(/\(.*/, "")) !== -1) {
-        backend = 'sub.id9.cc/sub?'
+      if (sourceSub.indexOf("losadhwse") !== -1 && backend.indexOf(domains.replace(/\(.*/, "")) !== -1) {
+        backend = 'https://sub.id9.cc/sub?'
       }
 
       this.customSubUrl =
