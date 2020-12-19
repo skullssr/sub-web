@@ -242,8 +242,8 @@ const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config/upload'
 const tgBotLink = process.env.VUE_APP_BOT_LINK
-const hosts = document.domain + '/sub?'
-const hostsd = hosts ? hosts : "https://subcon.tk/sub?"
+const hosts = document.domain
+const hostsd = hosts ? (hosts + '/sub?') : "https://subcon.tk/sub?"
 
 export default {
   data() {
@@ -275,7 +275,7 @@ export default {
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
-          "subcon.tk (本站提供）": hostsd,
+          hosts + " (本站提供）": hostsd,
           "subcon.dlj.tf(subconverter作者提供-稳定)":
             "https://subcon.dlj.tf/sub?",
           "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
