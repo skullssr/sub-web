@@ -242,8 +242,9 @@ const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config/upload'
 const tgBotLink = process.env.VUE_APP_BOT_LINK
-const hosts = document.domain
-const hostsd = hosts ? (hosts + '/sub?') : "https://subcon.tk/sub?"
+const domains = document.domain
+const hosts = domains ? (domains + '/sub?') : "https://subcon.tk/sub?"
+const hostsname = domains ? (hosts + ' (本站提供）') : 'subcon.tk (本站提供）'
 
 export default {
   data() {
@@ -275,7 +276,7 @@ export default {
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
-          [hosts]: hostsd,
+          [hostsname]: hosts,
           "subcon.dlj.tf(subconverter作者提供-稳定)":
             "https://subcon.dlj.tf/sub?",
           "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
@@ -285,7 +286,7 @@ export default {
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
-          { value: hostsd },
+          { value: hosts },
           { value: "https://subcon.dlj.tf/sub?" },
           { value: "https://api.dler.io/sub?" },
           { value: "https://api.wcc.best/sub?" },
@@ -661,7 +662,7 @@ export default {
   },
   mounted() {
     this.form.clientType = "clash&new_name=true";
-    this.form.customBackend = hostsd;
+    this.form.customBackend = hosts;
     // this.form.remoteConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
     this.form.remoteConfig = "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/normal.ini";
     this.notify();
