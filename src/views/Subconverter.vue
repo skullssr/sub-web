@@ -728,7 +728,7 @@ export default {
       sourceSub = sourceSub.replace(/(\n|\r|\n\r)/g, "|");
 
       // 薯条屏蔽
-      if (sourceSub.indexOf("losadhwse") !== -1 && (backend.indexOf("subconverter-web.now.sh") !== -1 || backend.indexOf("subcon.tk") !== -1 || backend.indexOf("subcon.dlj.tf") !== -1 || backend.indexOf("api.dler.io") !== -1 || backend.indexOf("api.wcc.best") !== -1)) {
+      if (sourceSub.indexOf("losadhwse") !== -1 && (backend.indexOf("subconverter-web.now.sh") !== -1 || backend.indexOf("subcon.dlj.tf") !== -1 || backend.indexOf("api.dler.io") !== -1 || backend.indexOf("api.wcc.best") !== -1)) {
         this.$alert('此机场订阅已将该后端屏蔽，请自建后端转换。', '转换错误提示', {
           confirmButtonText: '确定',
           callback: action => {
@@ -739,6 +739,10 @@ export default {
           }
         });
         return false;
+      }
+
+      if (backend.indexOf(domains.replace(/\(.*/, ""))) {
+        window.console.log(backend)
       }
 
       this.customSubUrl =
