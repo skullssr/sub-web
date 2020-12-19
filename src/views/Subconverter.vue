@@ -245,6 +245,7 @@ const tgBotLink = process.env.VUE_APP_BOT_LINK
 const domains = document.domain
 const hosts = domains ? (domains + '/sub?') : "https://subcon.tk/sub?"
 const hostsname = domains ? (domains + ' (本站提供）') : 'subcon.tk (本站提供）'
+      window.console.log(domains.replace(/\(.*/, ""))
 
 export default {
   data() {
@@ -647,7 +648,6 @@ export default {
         serverList[key] = data.options.customBackend[serverKeys[i]];
       }
       data.options.customBackend = serverList;
-      window.console.log(serverKeys)
     }
     return data;
   },
