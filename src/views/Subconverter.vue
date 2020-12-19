@@ -99,6 +99,9 @@
                           <el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox>
                         </el-row>
                         <el-row>
+                          <el-checkbox v-model="form.tfo" label="启用 TCP"></el-checkbox>
+                        </el-row>
+                        <el-row>
                           <el-checkbox v-model="form.appendType" label="节点类型"></el-checkbox>
                         </el-row>
                         <el-row>
@@ -239,6 +242,7 @@ const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config/upload'
 const tgBotLink = process.env.VUE_APP_BOT_LINK
+console.log(defaultBackend)
 
 export default {
   data() {
