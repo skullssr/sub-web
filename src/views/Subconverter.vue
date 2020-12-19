@@ -244,7 +244,7 @@ const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const domains = document.domain
 const hosts = domains ? (domains + '/sub?') : "https://subcon.tk/sub?"
-const hostsname = domains ? (hosts + ' (本站提供）') : 'subcon.tk (本站提供）'
+const hostsname = domains ? (domains + ' (本站提供）') : 'subcon.tk (本站提供）'
 
 export default {
   data() {
