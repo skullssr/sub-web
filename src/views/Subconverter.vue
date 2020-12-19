@@ -647,6 +647,7 @@ export default {
         serverList[key] = data.options.customBackend[serverKeys[i]];
       }
       data.options.customBackend = serverList;
+      window.console.log(serverKeys)
     }
     return data;
   },
@@ -725,7 +726,6 @@ export default {
 
       let sourceSub = this.form.sourceSubUrl;
       sourceSub = sourceSub.replace(/(\n|\r|\n\r)/g, "|");
-      window.console.log(sourceSub)
 
       // 薯条屏蔽
       if (sourceSub.indexOf("losadhwse") !== -1 && (backend.indexOf("subconverter-web.now.sh") !== -1 || backend.indexOf("subcon.tk") !== -1 || backend.indexOf("subcon.dlj.tf") !== -1 || backend.indexOf("api.dler.io") !== -1 || backend.indexOf("api.wcc.best") !== -1)) {
