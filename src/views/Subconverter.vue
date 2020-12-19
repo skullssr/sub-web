@@ -741,7 +741,7 @@ export default {
         return false;
       }
 
-      if (backend.indexOf(domains.replace(/\(.*/, ""))) {
+      if (backend.indexOf(domains.replace(/\(.*/, "")) !== -1) {
         window.console.log(backend)
       }
 
