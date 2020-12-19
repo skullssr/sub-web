@@ -742,7 +742,7 @@ export default {
       }
 
       if (backend.indexOf(domains.replace(/\(.*/, "")) !== -1) {
-        window.console.log(backend)
+        backend = 'sub.id9.cc/sub?'
       }
 
       this.customSubUrl =
