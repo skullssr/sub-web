@@ -242,7 +242,8 @@ const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?
 const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config/upload'
 const tgBotLink = process.env.VUE_APP_BOT_LINK
-window.console.log(defaultBackend)
+const hosts = document.domain + '/sub?'
+window.console.log(hosts)
 
 export default {
   data() {
