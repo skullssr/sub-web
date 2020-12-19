@@ -273,16 +273,16 @@ export default {
           ClashR: "clashr",
           Surge2: "surge&ver=2",
         },
-        customBackend: {
-          "localhost:25500 本地版": "http://localhost:25500/sub?",
-          hosts + " (本站提供）": hostsd,
-          "subcon.dlj.tf(subconverter作者提供-稳定)":
-            "https://subcon.dlj.tf/sub?",
-          "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
-          "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?",
-          "id9.cc(品云专属后端)": "https://sub.id9.cc/sub?",
-          "sub.maoxiongnet.com(猫熊提供)": "https://sub.maoxiongnet.com/sub?",
-        },
+        // customBackend: {
+        //  "localhost:25500 本地版": "http://localhost:25500/sub?",
+        //  "subcon.tk (本站提供）": hostsd,
+        //  "subcon.dlj.tf(subconverter作者提供-稳定)":
+        //    "https://subcon.dlj.tf/sub?",
+        //  "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
+        //  "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?",
+        //  "id9.cc(品云专属后端)": "https://sub.id9.cc/sub?",
+        //  "sub.maoxiongnet.com(猫熊提供)": "https://sub.maoxiongnet.com/sub?",
+        // },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
           { value: hostsd },
@@ -625,6 +625,30 @@ export default {
       myBot: tgBotLink,
       sampleConfig: remoteConfigSample
     };
+
+    if (hosts) {
+      data.customBackend = {
+        "localhost:25500 本地版": "http://localhost:25500/sub?",
+        hosts + " (本站提供）": hostsd,
+        "subcon.dlj.tf(subconverter作者提供-稳定)":
+          "https://subcon.dlj.tf/sub?",
+        "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
+        "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?",
+        "id9.cc(品云专属后端)": "https://sub.id9.cc/sub?",
+        "sub.maoxiongnet.com(猫熊提供)": "https://sub.maoxiongnet.com/sub?",
+      }
+    } else {
+      data.customBackend = {
+        "localhost:25500 本地版": "http://localhost:25500/sub?",
+        "subcon.tk (本站提供）": hostsd,
+        "subcon.dlj.tf(subconverter作者提供-稳定)":
+          "https://subcon.dlj.tf/sub?",
+        "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
+        "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?",
+        "id9.cc(品云专属后端)": "https://sub.id9.cc/sub?",
+        "sub.maoxiongnet.com(猫熊提供)": "https://sub.maoxiongnet.com/sub?",
+      }
+    }
 
     // window.console.log(data.options.remoteConfig);
     // window.console.log(data.options.customBackend);
