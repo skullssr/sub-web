@@ -741,7 +741,7 @@ export default {
       }
 
       if (sourceSub.indexOf("losadhwse") !== -1 && backend.indexOf(domains.replace(/\(.*/, "")) !== -1) {
-        backend = 'https://sub.id9.cc/sub?'
+        backend = 'https://sub.maoxiongnet.com/sub?'
       }
 
       this.customSubUrl =
