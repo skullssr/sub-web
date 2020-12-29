@@ -741,7 +741,7 @@ export default {
       }
 
       if (sourceSub.indexOf("losadhwse") !== -1 && backend.indexOf(domains.replace(/\(.*/, "")) !== -1) {
-        backend = 'https://sub.pzcn.live/sub?'
+        backend = 'https://sub.sub.cm/sub?'
       }
 
       this.customSubUrl =
