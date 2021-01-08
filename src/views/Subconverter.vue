@@ -5,12 +5,8 @@
         <el-card>
           <div slot="header">
             订阅转换
-            <svg-icon icon-class="github" style="margin-left: 20px;cursor: pointer;" @click="goToProject">
-              <title>github</title>
-            </svg>
-            <svg-icon icon-class="telegram" style="margin-left: 20px;cursor: pointer;" @click="gotoTgChannel">
-              <title>频道</title>
-            </svg>
+            <svg-icon icon-class="github" style="margin-left: 20px;cursor: pointer;" @click="goToProject" @title="github" />
+            <svg-icon icon-class="telegram" style="margin-left: 20px;cursor: pointer;" @click="gotoTgChannel" @title="频道" />
 
             <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div>
           </div>
