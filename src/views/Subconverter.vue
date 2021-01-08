@@ -5,8 +5,12 @@
         <el-card>
           <div slot="header">
             订阅转换
-            <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject" />
-            <svg-icon icon-class="telegram" style="margin-left: 20px" @click="gotoTgChannel" />
+            <svg-icon icon-class="github" style="margin-left: 20px;cursor: pointer;" @click="goToProject">
+              <title>github</title>
+            </svg>
+            <svg-icon icon-class="telegram" style="margin-left: 20px;cursor: pointer;" @click="gotoTgChannel">
+              <title>频道</title>
+            </svg>
 
             <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div>
           </div>
@@ -79,6 +83,9 @@
                 <el-form-item label="排除节点:">
                   <el-input v-model="form.excludeRemarks" placeholder="节点名不包含的关键字，支持正则" />
                 </el-form-item>
+                <el-form-item label="重命名节点:">
+                  <el-input v-model="form.rename" placeholder="重命名节点，支持正则（例：原始命名@重命名）" />
+                </el-form-item>
                 <el-form-item label="输出文件名:">
                   <el-input v-model="form.filename" placeholder="返回的订阅文件名" />
                 </el-form-item>
@@ -109,6 +116,9 @@
                         </el-row>
                         <el-row>
                           <el-checkbox v-model="form.fdn" label="过滤非法节点"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.scv" label="跳过证书验证"></el-checkbox>
                         </el-row>
                         <el-button slot="reference">更多选项</el-button>
                       </el-popover>
@@ -451,71 +461,47 @@ export default {
             options: [
               {
                 label: "Nirvana",
-                value:
-                  "https://raw.githubusercontent.com/Mazetsz/ACL4SSR/master/Clash/config/V2rayPro.ini"
+                value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Nirvana.ini"
               },
               {
                 label: "V2Pro",
-                value:
-                  "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/V2Pro.ini"
+                value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/V2Pro.ini"
               },
               {
-              label: "史迪仔-自动测速",
-              value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Stitch.ini"
+                label: "史迪仔-自动测速",
+                value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Stitch.ini"
               },
               {
                 label: "史迪仔-负载均衡",
                 value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Stitch-Balance.ini"
               },
               {
+                label: "路飞船长",
+                value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Luffy_balance.ini"
+              },
+              {
+                label: "CNIX",
+                value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/SSRcloud.ini"
+              },
+              {
+                label: "w8ves",
+                value: "https://raw.nameless13.com/api/public/dl/M-We_Fn7/w8ves.ini"
+              },
+              {
                 label: "Maying",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/maying.ini"
-              },
-              {
-                label: "rixCloud",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/rixcloud.ini"
-              },
-              {
-                label: "YoYu",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/yoyu.ini"
+                value: "https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/maying.ini"
               },
               {
                 label: "Ytoo",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/ytoo.ini"
+                value: "https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/ytoo.ini"
               },
               {
                 label: "NyanCAT",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/nyancat.ini"
+                value: "https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/nyancat.ini"
               },
               {
                 label: "Nexitally",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/nexitally.ini"
-              },
-              {
-                label: "SoCloud",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/socloud.ini"
-              },
-              {
-                label: "ARK",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/ark.ini"
-              },
-              {
-                label: "ssrCloud",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/ssrcloud.ini"
-              },
-              {
-                label: "贼船",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/zeichuan.ini"
+                value: "https://raw.githubusercontent.com/CareyWang/Rules/master/RemoteConfig/customized/nexitally.ini"
               }
             ]
           },
@@ -593,6 +579,7 @@ export default {
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
+        rename: "",
         emoji: true,
         nodeList: false,
         extraset: false,
@@ -741,7 +728,7 @@ export default {
       }
 
       if (sourceSub.indexOf("losadhwse") !== -1 && backend.indexOf(domains.replace(/\(.*/, "")) !== -1) {
-        backend = 'https://sub.sub.cm/sub?'
+        backend = 'https://api.ytoo-163cdn.com/sub?'
       }
 
       this.customSubUrl =
@@ -769,6 +756,10 @@ export default {
         if (this.form.filename !== "") {
           this.customSubUrl +=
             "&filename=" + encodeURIComponent(this.form.filename);
+        }
+        if (this.form.rename !== "") {
+          this.customSubUrl +=
+            "&rename=" + encodeURIComponent(this.form.rename);
         }
         if (this.form.appendType) {
           this.customSubUrl +=
