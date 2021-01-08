@@ -74,13 +74,13 @@
 
 
                 <el-form-item label="包含节点:">
-                  <el-input v-model="form.includeRemarks" placeholder="节点名包含的关键字，支持正则" />
+                  <el-input v-model="form.includeRemarks" placeholder="正则|是分隔 深圳.*香港|日本" />
                 </el-form-item>
                 <el-form-item label="排除节点:">
-                  <el-input v-model="form.excludeRemarks" placeholder="节点名不包含的关键字，支持正则" />
+                  <el-input v-model="form.excludeRemarks" placeholder="正则|是分隔 香港|\.[0-9]" />
                 </el-form-item>
                 <el-form-item label="重命名节点:">
-                  <el-input v-model="form.rename" placeholder="重命名节点，支持正则（例：原始命名@重命名）" />
+                  <el-input v-model="form.rename" placeholder="原始命名@重命名" />
                 </el-form-item>
                 <el-form-item label="输出文件名:">
                   <el-input v-model="form.filename" placeholder="返回的订阅文件名" />
