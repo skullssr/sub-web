@@ -620,7 +620,7 @@ export default {
     }
   },
   mounted() {
-    this.form.clientType = "clash&new_name=true";
+    this.form.clientType = "clash";
     this.form.customBackend = hosts;
     // this.form.remoteConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
     this.form.remoteConfig = "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/normal.ini";
