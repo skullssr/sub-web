@@ -74,10 +74,10 @@
 
 
                 <el-form-item label="包含节点:">
-                  <el-input v-model="form.includeRemarks" placeholder="正则|是分隔 深圳.*香港|日本" />
+                  <el-input v-model="form.includeRemarks" placeholder="正则 | 是分隔 （例：深圳.*香港|日本）" />
                 </el-form-item>
                 <el-form-item label="排除节点:">
-                  <el-input v-model="form.excludeRemarks" placeholder="正则|是分隔 香港|\.[0-9]" />
+                  <el-input v-model="form.excludeRemarks" placeholder="正则 | 是分隔 （例：香港|\.[0-9]"） />
                 </el-form-item>
                 <el-form-item label="重命名节点:">
                   <el-input v-model="form.rename" placeholder="原始命名@重命名" />
@@ -96,7 +96,7 @@
                           <el-checkbox v-model="form.emoji" label="Emoji"></el-checkbox>
                         </el-row>
                         <el-row>
-                          <el-checkbox v-model="form.new_name" label="Clash New Field"></el-checkbox>
+                          <el-checkbox v-model="form.new_name" label="Clash新字段名"></el-checkbox>
                         </el-row>
                         <el-row>
                           <el-checkbox v-model="form.udp" label="启用 UDP"></el-checkbox>
@@ -111,10 +111,13 @@
                           <el-checkbox v-model="form.sort" label="排序节点"></el-checkbox>
                         </el-row>
                         <el-row>
-                          <el-checkbox v-model="form.fdn" label="过滤非法节点"></el-checkbox>
+                          <el-checkbox v-model="form.fdn" label="过滤不支持节点"></el-checkbox>
                         </el-row>
                         <el-row>
                           <el-checkbox v-model="form.scv" label="跳过证书验证"></el-checkbox>
+                        </el-row>
+                        <el-row>
+                          <el-checkbox v-model="form.expand" label="展开规则全文"></el-checkbox>
                         </el-row>
                         <el-button slot="reference">更多选项</el-button>
                       </el-popover>
@@ -263,32 +266,32 @@ export default {
 
       options: {
         clientTypes: {
-          "Clash新参数": "clash&new_name=true",
-          "ClashR新参数": "clashr&new_name=true",
           Clash: "clash",
+          ClashR: "clashr",
+          Surge2: "surge&ver=2",
           Surge3: "surge&ver=3",
           Surge4: "surge&ver=4",
           Quantumult: "quan",
-          QuantumultX: "quanx",
-          Surfboard: "surfboard",
+          Quantumult X: "quanx",
           Loon: "loon",
-          SSAndroid: "sssub",
+          Mellow: "mellow",
+          Surfboard: "surfboard",
+          Shadowsocks(SIP002): "ss",
+          Shadowsocks Android(SIP008): "sssub",
+          ShadowsocksR: "ssr",
+          ShadowsocksD: "ssd",          
           V2Ray: "v2ray",
-          ss: "ss",
-          ssr: "ssr",
-          ssd: "ssd",
-          ClashR: "clashr",
-          Surge2: "surge&ver=2",
+          Trojan: "trojan",
+          混合订阅（mixed）: "mixed",
+          自动判断客户端: "auto",
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
           [hostsname]: hosts,
-          "subcon.dlj.tf(subconverter作者提供-稳定)":
-            "https://subcon.dlj.tf/sub?",
+          "subcon.dlj.tf(subconverter作者提供-稳定)": "https://subcon.dlj.tf/sub?",
           "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
           "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?",
           "id9.cc(品云专属后端)": "https://sub.id9.cc/sub?",
-          "sub.maoxiongnet.com(猫熊提供)": "https://sub.maoxiongnet.com/sub?",
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
@@ -458,16 +461,8 @@ export default {
                 value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Stitch-Balance.ini"
               },
               {
-                label: "路飞船长",
-                value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/Luffy_balance.ini"
-              },
-              {
                 label: "CNIX",
                 value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/SSRcloud.ini"
-              },
-              {
-                label: "w8ves",
-                value: "https://raw.nameless13.com/api/public/dl/M-We_Fn7/w8ves.ini"
               },
               {
                 label: "Maying",
@@ -563,6 +558,7 @@ export default {
         udp: false,
         tfo: false,
         scv: false,
+        expand: true, // 是否将规则全文写进配置文件
         fdn: false,
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
@@ -756,7 +752,9 @@ export default {
           "&fdn=" +
           this.form.fdn.toString() +
           "&sort=" +
-          this.form.sort.toString();
+          this.form.sort.toString() +
+          "&expand=" +
+          this.form.expand.toString();
 
         if (this.form.tpl.surge.doh === true) {
           this.customSubUrl += "&surge.doh=true";
