@@ -77,7 +77,7 @@
                   <el-input v-model="form.includeRemarks" placeholder="正则 | 是分隔 （例：深圳.*香港|日本）" />
                 </el-form-item>
                 <el-form-item label="排除节点:">
-                  <el-input v-model="form.excludeRemarks" placeholder="正则 | 是分隔 （例：香港|\.[0-9]"） />
+                  <el-input v-model="form.excludeRemarks" placeholder="正则 | 是分隔 （例：香港|\.[0-9]"）" />
                 </el-form-item>
                 <el-form-item label="重命名节点:">
                   <el-input v-model="form.rename" placeholder="原始命名@重命名" />
