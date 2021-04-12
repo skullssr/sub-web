@@ -508,6 +508,10 @@ export default {
               {
                 label: "媒体与分区域无自动测速",
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Media_NoAuto.ini"
+              },
+              {
+                label: "媒体与分区域测速手选混合",
+                value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Media_Mix.ini"
               }
             ]
           },
