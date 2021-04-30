@@ -541,6 +541,10 @@ export default {
               {
                 label: "Basic(仅GEOIP CN + Final)",
                 value: "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/special/basic.ini"
+              },
+              {
+                label: "媒体与分区域自动测速无emoji",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Media_noEmoji.ini"
               }
             ]
           }
