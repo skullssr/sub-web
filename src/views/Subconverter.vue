@@ -547,6 +547,43 @@ export default {
                 value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Media_noEmoji.ini"
               }
             ]
+          },
+          {
+            label: "本站规则无emoji",
+            options: [
+              {
+                label: "常规规则",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/normal_NoEmoji.ini"
+              },
+              {
+                label: "分区域故障转移",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Fallback_NoEmoji.ini"
+              },
+              {
+                label: "分区域自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Urltest_NoEmoji.ini"
+              },
+              {
+                label: "分区域无自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_NoAuto_NoEmoji.ini"
+              },
+              {
+                label: "媒体与分区域自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Media_NoEmoji.ini"
+              },
+              {
+                label: "媒体与分区域无自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Media_NoAuto_NoEmoji.ini"
+              },
+              {
+                label: "媒体与分区域去广告",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Area_Media_AdblockPlus_NoEmoji.ini"
+              },
+              {
+                label: "无自动测速",
+                value: "https://raw.githubusercontent.com/skullssr/merlinclash_clash_related/master/User_config/Media_NoAuto_NoEmoji.ini"
+              }
+            ]
           }
         ]
       },
